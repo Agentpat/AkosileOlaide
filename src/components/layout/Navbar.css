@@ -1,0 +1,122 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(228, 231, 235, 0.8);
+    background: rgba(247, 248, 250, 0.88);
+    backdrop-filter: blur(18px);
+}
+
+.navbar__inner {
+    position: relative;
+    display: flex;
+    min-height: 76px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__brand {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.navbar__name {
+    color: var(--color-text);
+    font-size: 15px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+}
+
+.navbar__role {
+    color: var(--color-text-muted);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+}
+
+.navbar__nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar__link {
+    color: var(--color-text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    transition:
+        color var(--transition-fast),
+        opacity var(--transition-fast);
+}
+
+.navbar__link:hover {
+    color: var(--color-text);
+}
+
+.navbar__resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.navbar__resume:hover {
+    color: var(--color-accent);
+}
+
+.navbar__toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .navbar__inner {
+        min-height: 68px;
+    }
+
+    .navbar__toggle {
+        display: inline-flex;
+    }
+
+    .navbar__nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px;
+        border: 1px solid var(--color-border);
+        border-top: 0;
+        background: var(--color-surface);
+        box-shadow: var(--shadow-md);
+    }
+
+    .navbar__nav--open {
+        display: flex;
+    }
+
+    .navbar__link,
+    .navbar__resume {
+        min-height: 48px;
+        padding: 0 14px;
+        align-items: center;
+    }
+
+    .navbar__link:hover,
+    .navbar__resume:hover {
+        background: var(--color-surface-subtle);
+    }
+}
